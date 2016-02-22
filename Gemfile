@@ -6,7 +6,13 @@ gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-gem 'bootstrap-sass'
+gem 'therubyracer'
+gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
