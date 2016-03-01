@@ -7,48 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <%= link_to "colcho.net", root_path %>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><%= link_to t('layout.rooms'), rooms_path %></li>
-        <li><%= link_to t('layout.signup'), new_user_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Configurações <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<div id="main" role="main">
+<header>
+      <div id="header-wrap">
+              <h1><%= link_to "colcho.net", root_path %> </h1>
+                  <% if user_signed_in? %>
+                              <%= render 'layouts/user_navbar' %>
+                    <% else %>
+                                <%= render 'layouts/visitor_navbar' %>
+                  <% end %>
+          </div>
+</header>
+<div id="main" role="main" style="margin-top:2%">
   <div class="container">
     <div class="content">
       <div class="row">
-        <div class="col-md-12">
+
           <% if notice.present? %>
-              <p id="notice"><%= notice %> </p>
+            <div class="col-md-12">
+                  <p id="notice"><%= notice %> </p>
+              </div>
           <% end %>
           <% if alert.present? %>
+          <div class="col-md-12">
               <p id="alert"><%= alert %> </p>
+            </div>
           <% end %>
 
-        </div>
+
       </div>
       <div class="row">
         <div class="col-md-12">
