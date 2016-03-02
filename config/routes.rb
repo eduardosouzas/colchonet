@@ -3,8 +3,14 @@ Rails.application.routes.draw do
     resources :rooms
     resources :users
   end
-  resource :confirmation, only: [:show]
+
+    resources :rooms do
+      resources :reviews, only: [:create, :update], module: :rooms
+    end
+
+  resource :confirmations, only: [:show]
   resource :user_sessions, only: [:create, :new, :destroy]
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
