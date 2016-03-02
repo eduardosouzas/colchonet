@@ -1,4 +1,13 @@
 pt:
+  dialogs:
+    destroy: 'Você tem certeza que quer remover?'
+  rooms:
+    index:
+      title: 'Quartos disponíveis'
+    room:
+      owner_html: '&mdash; %{owner} (%{when})'
+      edit: 'Editar'
+      destroy: 'Remover'
   flash:
     alert:
           needs_login: "Você precisa estar logado para continuar"
