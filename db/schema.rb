@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301202731) do
+ActiveRecord::Schema.define(version: 20160302142458) do
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "room_id"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["user_id", "room_id"], name: "index_reviews_on_user_id_and_room_id", unique: true
 
   create_table "rooms", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160301202731) do
     t.integer  "user_id"
     t.string   "invoke"
     t.string   "active_record"
+    t.integer  "reviews_count"
   end
 
   add_index "rooms", ["user_id"], name: "index_rooms_on_user_id"
