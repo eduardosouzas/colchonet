@@ -89,6 +89,7 @@ pt:
         description: Descrição
         location: Localização
         title: Título
+        picture: Foto
 
   activemodel:
       attributes:

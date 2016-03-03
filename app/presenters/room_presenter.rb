@@ -38,5 +38,13 @@ class RoomPresenter
   def to_partial_path
     'room'
   end
-
+  def picture_url
+    @room.picture_url
+  end
+  def thumb_url
+    @room.picture.url(:thumb)
+  end
+  def has_picture?
+    @room.picture?
+  end
 end

@@ -65,3 +65,13 @@ mark {
   color: inherit;
   background-color: gold;
 }
+.room-description {
+  p, img {
+    float: left;
+    margin-right: 10px;
+  }
+}
+.room-description + ul {
+  padding-top: 10px;
+  clear: both;
+}

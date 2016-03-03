@@ -15,6 +15,14 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'sprockets-rails'
+# use for upload for photo
+gem 'carrierwave', '0.10.0'
+gem 'rmagick', :require => 'RMagick'
+
+# use for paginator
+gem 'kaminari'
+#use for slugs
+gem 'friendly_id', '5.0.3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
