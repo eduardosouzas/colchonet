@@ -13,7 +13,9 @@ class Room < ActiveRecord::Base
 
   def self.search(query)
     if query.present?
-      where(['location LIKE :query OR title LIKE :query OR description LIKE :query', query: "%#{query}%"])
+      # for sqlite3  where(['location LIKE :query OR title LIKE :query OR description LIKE :query', query: "%#{query}%"])
+      # for PostgreSQL
+      where(['location ILIKE :query OR title ILIKE :query OR description ILIKE :query', query: "%#{query}%"])
     else
       all
     end

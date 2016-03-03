@@ -42,7 +42,7 @@ class RoomPresenter
     @room.picture_url
   end
   def thumb_url
-    @room.picture.url(:thumb)
+    @room.picture.thumb.url
   end
   def has_picture?
     @room.picture?
