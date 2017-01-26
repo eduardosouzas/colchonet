@@ -76,4 +76,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.secret_key_base = ENV['SECRET_KEY_BASE']
+
+  # Lembre-se de trocar o host para a sua conta!
+  config.action_mailer.default_url_options = {
+      host: "enigmatic-bayou-50404.herokuapp.com"
+  }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      port: ENV['MAILGUN_SMTP_PORT'],
+      address:ENV['MAILGUN_SMTP_SERVER'],
+      user_name:ENV['MAILGUN_SMTP_LOGIN'],
+      password:ENV['MAILGUN_SMTP_PASSWORD'],
+      domain:     'enigmatic-bayou-50404.herokuapp.com',
+      authentication: :plain,
+  }
 end
